@@ -2,26 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .max-width {
+    @apply max-w-[1440px] mx-auto;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .hero {
+    @apply flex xl:flex-row flex-col gap-5 z-0 max-w-[1440px] mx-auto;
+  }
+
+  .hero-title {
+    @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold xl:w-[600px];
+  }
+
+  .hero-subtitle {
+    @apply text-[20px] text-black-100 font-light mt-3 xl:w-[550px];
+  }
+
+  .custom-btn {
+    @apply flex justify-center items-center py-3 px-6 outline-none;
+  }
+
+  .combobox-input {
+    @apply bg-transparent text-sm text-gray-600 outline-none placeholder:text-sm;
+  }
+
+  .combobox-option {
+    @apply cursor-pointer py-2 px-5 text-xs hover:bg-gray-100 transition duration-100;
+  }
+
+  .cars-section {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7;
+  }
+
+  .car-card {
+    @apply bg-slate-100 group-hover:invisible rounded-2xl p-5 hover:shadow-lg hover:bg-white hover:shadow-gray-300 transition duration-150 ease-in-out flex flex-col justify-between;
+  }
+
+  .custom-filter-btn {
+    @apply relative min-w-[120px] cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-300 sm:text-sm;
+  }
+
+  .custom-filter-options {
+    @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+  }
 }
