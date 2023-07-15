@@ -15,8 +15,6 @@ const Home = async ({ searchParams }) => {
   });
   const isDataRecieved = allCars.length > 0;
 
-  console.log(allCars);
-
   return (
     <div>
       <Hero />
